@@ -1,0 +1,87 @@
+@use 'variables' as v;
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    background: v.$glass;
+    backdrop-filter: blur(15px);
+    border-bottom: rgba(255, 255, 255, 0.1) solid 1px;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: 900;
+        text-decoration: none;
+        color: v.$text;
+        letter-spacing: -1px;
+    }
+
+    &__logo span {
+        color: v.$accent;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+
+        @media (max-width: v.$tablet) {
+            gap: 15px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: v.$text;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: color 0.7s ease;
+    }
+
+    &__link:hover {
+        color: v.$accent;
+    }
+
+    &__list {
+        display: flex;
+        gap: 40px;
+
+        @media (max-width: v.$mobile) {
+            gap: 15px;
+        }
+    }
+}
+
+.btn {
+    &-icon {
+        background-color: v.$accent;
+        box-shadow: 0 0 7px v.$accent;
+        border: 2px solid v.$accent;
+        border-radius: 15px;
+        padding: 5px 10px;
+        font-size: 10px;
+        font-weight: 900;
+        animation: fadeIn 1.5s ease-out 0.5s forwards;
+        margin-top: auto;
+    }
+
+    &-icon:hover {
+         transform: scale(1.05);
+    }
+}
